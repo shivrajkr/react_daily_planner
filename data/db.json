@@ -1,0 +1,8 @@
+[
+    { "id": "1", "checked": true, "item": "Complete the To-Do List project" },
+    { "id": "2", "checked": false, "item": "Morning workout for 30 minutes" },
+    { "id": "3", "checked": false, "item": "Solve 2 JavaScript coding challenges" },
+    { "id": "4", "checked": false, "item": "Spend time on a hobby (e.g., dancing, cricket)" },
+    { "id": "5", "checked": false, "item": "Read 10 pages of a book" }
+  ]
+  
