@@ -43,7 +43,6 @@ function App() {
     const id = items.length ? (items[items.length - 1].id + 1) : "1"; // Auto-generate ID
     const item = newItem;
     const formNewItem = { id: id, checked: false, item: item };
-
     // Update the state with the new list
     const newList = [...items, formNewItem];
     setItems(newList);
@@ -51,12 +50,11 @@ function App() {
     // Send a POST request to add the item to the database
     const Options = {
       method: 'POST',
-      headers: { content: 'Application/json' },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formNewItem)
     };
     const result = await fetch(API_URL, Options);
-    console.log(result);
-
+    
     if (result) setError(result.message); // Handle API response error
 
     // Clear the input field after adding the item
@@ -76,9 +74,7 @@ function App() {
     // Send a PATCH request to update the checked state
     const updateOptions = {
       method: 'PUT', // Change PATCH to PUT
-      headers: {
-        'Content-Type': 'application/json'
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ checked: myItem[0].checked })
     };
     const reqUrl = `${API_URL}/${id}`;
